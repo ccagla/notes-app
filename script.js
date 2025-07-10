@@ -18,4 +18,11 @@ form.addEventListener("submit", function(e){
     addNoteToDom(noteText);
     saveNoteToLocalStorage(noteText);
     input.value = "";   
-})
+});
+
+function addNoteToDom(noteText) {
+    const li = document.createElement("li");
+    li.textContent = noteText;
+    
+    noteList.appendChild(li);
+}
