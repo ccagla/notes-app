@@ -1,5 +1,6 @@
 
 
+
 const form = document.getElementById("note-form")
 const input = document.getElementById("note-input");
 const noteList = document.getElementById("note-list");
@@ -23,6 +24,12 @@ form.addEventListener("submit", function(e){
 function addNoteToDom(noteText) {
     const li = document.createElement("li");
     li.textContent = noteText;
-    
+
     noteList.appendChild(li);
+}
+
+function saveNoteToLocalStorage(noteText) {
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+    notes.push(noteText);
+    localStorage.setItem("notes", JSON.stringify(notes))
 }
