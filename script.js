@@ -21,6 +21,7 @@ form.addEventListener("submit", function(e){
     input.value = "";   
 });
 
+
 function addNoteToDom(noteText) {
     const li = document.createElement("li");
     li.textContent = noteText;
@@ -33,3 +34,13 @@ function saveNoteToLocalStorage(noteText) {
     notes.push(noteText);
     localStorage.setItem("notes", JSON.stringify(notes))
 }
+
+function loadNotesFromLocalStorage() {
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+    notes.forEach(note => {
+        addNoteToDom(note);
+    });
+}
+
+loadNotesFromLocalStorage()
