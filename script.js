@@ -24,9 +24,30 @@ form.addEventListener("submit", function(e){
 
 function addNoteToDom(noteText) {
     const li = document.createElement("li");
-    li.textContent = noteText;
+    const span = document.createElement("span");
 
+    span.textContent = noteText;
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("delete-btn");
+
+    deleteBtn.addEventListener("click", () => {
+        deleteNote(noteText, li);
+    });
+
+    li.appendChild(span);
+    li.appendChild(deleteBtn)
     noteList.appendChild(li);
+}
+
+function deleteNote(noteText,li) {
+    li.remove();
+
+    let notes = JSON.parse(localStorage.getItem("notes")) || [];
+    notes = notes.filter(note => note !== noteText);
+    localStorage.setItem("notes", JSON.stringify(notes));
+
 }
 
 function saveNoteToLocalStorage(noteText) {
@@ -43,4 +64,4 @@ function loadNotesFromLocalStorage() {
     });
 }
 
-loadNotesFromLocalStorage()
+loadNotesFromLocalStorage();

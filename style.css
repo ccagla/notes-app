@@ -65,7 +65,7 @@ button:hover {
 }
 
 #note-list li span {
-    flex: 1;
+   flex: 1;
 }
 
 .delete-btn {
