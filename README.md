@@ -28,3 +28,7 @@ It allows users to add, view, and delete notes. All notes are stored in the brow
 ## Author
 I'm a frontend developer in progress — building real-world projects and learning by doing.  
 Check out more on my [GitHub](https://github.com/ccagla)  or follow my learning journey on [Medium](https://medium.com/@caglaeksii)
+
+
+## 🚀 Live Demo
+[View Project](https://ccagla.github.io/notes-app/)
